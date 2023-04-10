@@ -17,9 +17,6 @@ FILENAME = "letter.in"
 READ = file_reading
 #READ = input_reading
 
-true = True
-false = False
-
 datatable = READ()
 
 for itr in datatable:
