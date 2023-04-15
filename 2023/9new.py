@@ -29,11 +29,13 @@ def read_input():
             print("Why Don’t You Make Like a Tree and Get Outta Here?")
         else:
             highest = 0
-            while timetofloat(events[highest].split(" ")[1].split(":")) <= time:
+            while timetofloat(events[highest].split(" ")[1].split(":")) <= time and highest + 1 < len(events):
                 highest += 1
             string = ""
             for i in range(highest):
                 string += events[i].split(" ")[0] + " "
+            if time == timetofloat(events[len(events) - 1].split(" ")[1].split(":")):
+                string += events[len(events) - 1].split(" ")[0]
             print(string.strip())
 
 read_input()
