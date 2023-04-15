@@ -29,13 +29,11 @@ def howmany(table):
                     tempcurrent *= num
                 elif type == "DIVIDE":
                     tempcurrent /= num
-            if tempcurrent < 0 or tempcurrent % 1 != 0:
-                total += 1
+                if tempcurrent < 0 or tempcurrent % 1 != 0:
+                    total += 1
+                    break
             current += 1
         print(total)
-
-
-
 
 table = input_reading()
 howmany(table)
