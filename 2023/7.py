@@ -20,3 +20,4 @@ def input_reading():
               max = int(item)
           bestquartet += max
       print(bestquartet)
+input_reading()
