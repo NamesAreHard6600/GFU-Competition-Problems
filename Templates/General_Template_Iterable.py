@@ -1,6 +1,6 @@
 #Line 16
 def file_reading():
-  f = open("letter.in", 'r')
+  f = open(FILENAME, 'r')
   num = int(f.readline().strip())
   datatable = [f.readline().strip() for _ in range(num)]
   datatable.insert(0,num)
