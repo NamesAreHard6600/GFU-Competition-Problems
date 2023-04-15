@@ -1,42 +1,32 @@
+import math
 
-
-def read_input():
-    table = []
+def input_reading():
+    datatable = []
     num = int(input().strip())
-    for i in range(num * 2):
-        table.append(input().strip())
-    newtable = []
-    for i in range(len(table)):
-        if i % 2 != 0:
-            newtable.append(table[i])
-    return newtable
-        
+    datatable = [input().strip() for _ in range(num*2)]
+    datatable.insert(0,num)
+    return datatable
+
+def part(x,y):
+    if x == 0 or y == 0:
+        return 0
+    return int(x*y/math.gcd(x,y))
+
+def lcm(arr):
+    if len(arr) == 0:
+        return 1
+    if len(arr) == 1:
+        return arr[0]
+    ret = part(arr[0],arr[1])
+    for x in arr[2:]:
+        ret = part(ret,x)
+    return ret
 
 
-def is_common(nums, num):
-    common = True
-    for number in nums:
-        if (num / number) % 1 != 0:
-            common = False
-    return common
+data = iter(input_reading())
 
-def lcm(nums):
-    nums = nums.split(" ")
-    for i in range(len(nums)):
-        nums[i] = int(nums[i])
-    largest = 0
-    for num in nums:
-        if num > largest:
-            largest = num
-    x = 1
-    while is_common(nums, largest * x) != True:
-        x += 1
-    print(largest * x)
+for x in range(int(next(data))):
+    next(data)
+    arr = [int(x) for x in next(data).split()]
+    print(lcm(arr))
 
-table = read_input()
-for item in table:
-    lcm(item)
-
-#all gnomes have a pace of Gi
-#at each int multiple of Gi the gnome(G) will do a dance move
-#given a set of gnomes, what is the first point in time when all perform simultaneous dance move
