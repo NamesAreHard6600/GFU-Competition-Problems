@@ -22,9 +22,8 @@ def find_lcm(nums):
         x = 1
         lcm = nums[0]
         while x < len(nums):
-            lcm = int(lcm * nums[x]) // math.gcd(lcm, nums[x])
+            lcm = (lcm * nums[x]) // math.gcd(lcm, nums[x])
             x += 1
-            print(str((x / len(nums)) * 100))
         print(lcm)
 #all gnomes have a pace of Gi
 #at each int multiple of Gi the gnome(G) will do a dance move
