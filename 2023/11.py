@@ -1,5 +1,4 @@
-
-
+#Written by Calder
 
 def input_reading():
   table = []
