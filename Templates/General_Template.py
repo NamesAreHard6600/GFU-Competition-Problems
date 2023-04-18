@@ -14,14 +14,8 @@ def read(t):
     f.close()
   return datatable
 
-FILENAME = "6.in"
-datatable = read("file")
-
 FILENAME = "#.in"
-READ = file_reading
-#READ = input_reading
-
-datatable = READ()
+datatable = read("file")
 
 for itr in datatable:
   print(itr)
