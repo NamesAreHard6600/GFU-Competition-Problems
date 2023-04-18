@@ -8,7 +8,7 @@ def read(t):
     READ = input
   #Formatting Starts Here
   num = int(READ().strip())
-  datatable = [input().strip() for _ in range(num)]
+  datatable = [READ().strip() for _ in range(num)]
   #Formatting Ends Here
   if f: 
     f.close()
@@ -17,7 +17,7 @@ def read(t):
 FILENAME = "6.in"
 datatable = read("file")
 
-FILENAME = "letter.in"
+FILENAME = "#.in"
 READ = file_reading
 #READ = input_reading
 
