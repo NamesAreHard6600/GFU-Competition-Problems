@@ -9,6 +9,7 @@ def read(t):
   #Formatting Starts Here
   num = int(READ().strip())
   datatable = [READ().strip() for _ in range(num)]
+  datatable.insert(0,num)
   #Formatting Ends Here
   if f: 
     f.close()
