@@ -18,5 +18,7 @@ def read(t):
 FILENAME = "#.in"
 datatable = read("file")
 
+data = iter(datatable)
+
 for i in range(next(data)):
   print(next(data))
