@@ -1,17 +1,21 @@
-#Line 16
-def file_reading():
-  f = open(FILENAME, 'r')
-  num = int(f.readline().strip())
-  datatable = [f.readline().strip() for _ in range(num)]
-  datatable.insert(0,num)
-  f.close()
+#Line 17
+def read(t):
+  f = None
+  if t == "file":
+    f = open(FILENAME, 'r')
+    READ = f.readline
+  else:
+    READ = input
+  #Formatting Starts Here
+  num = int(READ().strip())
+  datatable = [READ().strip() for _ in range(num)]
+  #Formatting Ends Here
+  if f: 
+    f.close()
   return datatable
 
-def input_reading():
-  num = int(input().strip())
-  datatable = [input().strip() for _ in range(num)]
-  datatable.insert(0,num)
-  return datatable
+FILENAME = "#.in"
+datatable = read("file")
 
 FILENAME = "letter.in"
 READ = file_reading
