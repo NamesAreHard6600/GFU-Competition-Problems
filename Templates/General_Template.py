@@ -15,7 +15,7 @@ def read(t):
   return datatable
 
 FILENAME = "6.in"
-datatable = read("")
+datatable = read("file")
 
 FILENAME = "letter.in"
 READ = file_reading
